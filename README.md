@@ -23,7 +23,7 @@ Before you begin, make sure you have the following prerequisites:
    cd Ghost-CMS-on-Kubernetes
    ```
 
-2. Review the configuration files in the repository to understand the different components that will be deployed.
+2. Review the configuration files in the repository & edit the configuration `env` values. 
 
 3. Deploy the Ghost CMS and its supporting infrastructure to your Kubernetes cluster:
 
