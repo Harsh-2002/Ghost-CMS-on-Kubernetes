@@ -1,0 +1,42 @@
+# This is the Kubernetes Deployment for the MySQL (MariaDB) database
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+spec:
+  # Set the number of replicas to 1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:8.0
+        env:
+        # Set the MySQL root password
+        - name: MYSQL_ROOT_PASSWORD
+          value: {{ mysql_root_password }}
+        # Set the database name to ghost
+        - name: MYSQL_DATABASE
+          value: ghost
+        # Set the database user to ghost
+        - name: MYSQL_USER
+          value: ghost
+        # Set the database password for the ghost user
+        - name: MYSQL_PASSWORD
+          value: {{ ghost_db_password }}
+        ports:
+        - containerPort: 3306
+        volumeMounts:
+        # Mount the persistent volume for MySQL data
+        - name: mysql-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-storage
+        persistentVolumeClaim:
+          claimName: mysql-pvc
