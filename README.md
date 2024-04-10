@@ -53,7 +53,7 @@ Before you begin, make sure you have the following prerequisites:
 
 - **Ghost Deployment**: A Kubernetes Deployment for the Ghost CMS application.
 - **MySQL (MariaDB) Deployment**: A Kubernetes Deployment for the MySQL (MariaDB) database used by Ghost.
-- **Persistent Volumes**: Persistent volume claims for storing Ghost and MySQL (MariaDB) data.
+- **Persistent Volumes**: Persistent volume claims for storing Ghost and MySQL data.
 - **Ingress**: A Kubernetes Ingress resource for exposing the Ghost CMS to the internet.
 - **TLS Certificates**: Automatic TLS certificate generation and management using Cert Manager.
 
