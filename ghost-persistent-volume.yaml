@@ -1,0 +1,11 @@
+# This is the Persistent Volume Claim for the Ghost CMS
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ghost-pvc
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
