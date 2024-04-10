@@ -1,0 +1,22 @@
+# This is the Kubernetes Ingress for the Ghost CMS
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ghost-ingress
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - {{ ghost_domain }}
+    secretName: ghost-cert-tls
+  rules:
+  - host: {{ ghost_domain }}
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: ghost
+            port:
+              number: 2368
