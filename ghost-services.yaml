@@ -1,0 +1,13 @@
+---
+# This is the Kubernetes Service for the Ghost CMS
+apiVersion: v1
+kind: Service
+metadata:
+  name: ghost
+spec:
+  selector:
+    app: ghost
+  ports:
+  - name: http
+    port: 2368
+    targetPort: 2368
