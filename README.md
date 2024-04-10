@@ -1,4 +1,4 @@
-# Deploying Ghost CMS on Kubernetes
+# Deploying Ghost CMS on Kubernetes with MySQL as the database.
 
 This repository contains the necessary Kubernetes configuration files to deploy the [Ghost](https://ghost.org/) content management system (CMS) on a Kubernetes cluster. Ghost is a popular, open-source blogging platform that provides a clean and minimalist interface for writing and publishing content.
 
