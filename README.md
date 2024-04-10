@@ -19,8 +19,8 @@ Before you begin, make sure you have the following prerequisites:
 1. Clone this repository to your local machine:
 
    ```
-   git clone https://github.com/your-username/ghost-on-k8s.git
-   cd ghost-on-k8s
+   git clone https://github.com/Harsh-2002/Ghost-CMS-on-Kubernetes.git
+   cd Ghost-CMS-on-Kubernetes
    ```
 
 2. Review the configuration files in the repository to understand the different components that will be deployed.
