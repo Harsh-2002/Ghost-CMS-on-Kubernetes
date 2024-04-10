@@ -1,0 +1,48 @@
+# This is the Kubernetes Deployment for the Ghost CMS
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ghost
+spec:
+  # Set the number of replicas to 1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ghost
+  template:
+    metadata:
+      labels:
+        app: ghost
+    spec:
+      containers:
+      - name: ghost
+        image: ghost:latest
+        env:
+        # Set the database client to mysql
+        - name: database__client
+          value: mysql
+        # Set the database connection host to mariadb
+        - name: database__connection__host
+          value: mariadb
+        # Set the database connection user to ghost
+        - name: database__connection__user
+          value: ghost
+        # Set the database connection password for the ghost user
+        - name: database__connection__password
+          value: {{ ghost_db_password }}
+        # Set the database name to ghost
+        - name: database__connection__database
+          value: ghost
+        # Set the URL for the Ghost CMS
+        - name: url
+          value: https://{{ ghost_domain }}
+        ports:
+        - containerPort: 2368
+        volumeMounts:
+        # Mount the persistent volume for Ghost content
+        - name: ghost-storage
+          mountPath: /var/lib/ghost/content
+      volumes:
+      - name: ghost-storage
+        persistentVolumeClaim:
+          claimName: ghost-pvc
