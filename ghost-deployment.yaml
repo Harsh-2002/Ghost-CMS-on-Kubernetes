@@ -23,7 +23,7 @@ spec:
           value: mysql
         # Set the database connection host to mariadb
         - name: database__connection__host
-          value: mysql
+          value: mariadb
         # Set the database connection user to ghost
         - name: database__connection__user
           value: ghost
@@ -36,6 +36,22 @@ spec:
         # Set the URL for the Ghost CMS
         - name: url
           value: https://{{ ghost_domain }}
+        # Set the email configuration
+        # Make sure to replace the values with your actual Mailgun email sender details
+        - name: mail__transport
+          value: SMTP
+        - name: mail__options__service
+          value: Mailgun
+        - name: mail__options__host
+          value: smtp.mailgun.org
+        - name: mail__options__port
+          value: "465"
+        - name: mail__options__secure
+          value: "true"
+        - name: mail__options__auth__user
+          value: postmaster@example.mailgun.org # Replace with your Mailgun email sender address
+        - name: mail__options__auth__pass
+          value: 1234567890 # Replace with your Mailgun email sender password
         ports:
         - containerPort: 2368
         volumeMounts:
