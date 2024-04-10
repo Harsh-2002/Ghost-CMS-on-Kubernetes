@@ -23,7 +23,7 @@ spec:
           value: mysql
         # Set the database connection host to mariadb
         - name: database__connection__host
-          value: mariadb
+          value: mysql
         # Set the database connection user to ghost
         - name: database__connection__user
           value: ghost
