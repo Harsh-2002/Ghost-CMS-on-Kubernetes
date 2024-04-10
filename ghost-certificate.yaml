@@ -1,0 +1,13 @@
+# This is the Kubernetes Certificate for the Ghost CMS
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ghost-cert
+spec:
+  secretName: ghost-cert-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: {{ ghost_domain }}
+  dnsNames:
+  - {{ ghost_domain }}
