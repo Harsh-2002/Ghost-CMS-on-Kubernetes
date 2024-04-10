@@ -23,7 +23,7 @@ Before you begin, make sure you have the following prerequisites:
    cd Ghost-CMS-on-Kubernetes
    ```
 
-2. Review the configuration files in the repository & edit the configuration `env` values. 
+2. Review the configuration files in the repository & edit the configuration env values. 
 
 3. Deploy the Ghost CMS and its supporting infrastructure to your Kubernetes cluster:
 
@@ -52,7 +52,7 @@ Before you begin, make sure you have the following prerequisites:
 ## Features
 
 - **Ghost Deployment**: A Kubernetes Deployment for the Ghost CMS application.
-- **MySQL (MariaDB) Deployment**: A Kubernetes Deployment for the MySQL (MariaDB) database used by Ghost.
+- **MySQL Deployment**: A Kubernetes Deployment for the MySQL (MariaDB) database used by Ghost.
 - **Persistent Volumes**: Persistent volume claims for storing Ghost and MySQL data.
 - **Ingress**: A Kubernetes Ingress resource for exposing the Ghost CMS to the internet.
 - **TLS Certificates**: Automatic TLS certificate generation and management using Cert Manager.
